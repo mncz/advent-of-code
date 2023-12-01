@@ -17,4 +17,4 @@ for l in lines:
     
     ans += int(f'{left}{right}')
 
-print(ans)
+print(ans) #53855
