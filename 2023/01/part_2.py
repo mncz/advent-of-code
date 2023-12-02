@@ -1,57 +1,41 @@
-import math
+# Day 1: Trebuchet?! - Part Two
+
+def replace_text(line):
+    n = [
+        ('one', 'o1e'),
+        ('two', 't2o'),
+        ('three', 't3e'),
+        ('four', '4'),
+        ('five', '5e'),
+        ('six', '6'),
+        ('seven', '7n'),
+        ('eight', 'e8t'),
+        ('nine', 'n9e')
+    ]
+
+    for (x, y) in n:
+        line = line.replace(x, y)
+    
+    return line
 
 file = open('input.txt', 'r')
 lines = file.readlines()
-nums = {
-    'one': 1,
-    'two': 2,
-    'three': 3,
-    'four': 4,
-    'five': 5,
-    'six': 6,
-    'seven': 7,
-    'eight': 8,
-    'nine': 9
-}
 ans = 0
 
 for l in lines:
-    # l.replace('one', 'o1e')
-    # ...
-    # l.replace('nine', 'n9e')
+    l = replace_text(l)
+    left, right = None, None
 
-    first_key, first_index = None, math.inf
-    last_key, last_index = None, -math.inf
-
-    for k in nums.keys():
-        i = l.find(k)
-        j = l.rfind(k)
-
-        if i >= 0:
-            if i < first_index:
-                first_index = i
-                first_key = k
-        
-        if j >= 0:
-            if j > last_index:
-                last_index = j
-                last_key = k
+    for c in l:
+        if c.isnumeric():
+            left = int(c)
+            break
     
-    left = nums[first_key] if first_key is not None else None
-    right = nums[last_key] if last_key is not None else None
+    for c in l[::-1]:
+        if c.isnumeric():
+            right = int(c)
+            break
     
-    for i in range(len(l)):
-        if l[i].isnumeric():
-            if i < first_index:
-                left = int(l[i])
-                break
-    
-    for i in range(len(l) - 1, -1, -1):
-        if l[i].isnumeric():
-            if i > last_index:
-                right = int(l[i])
-                break
-
     ans += int(f'{left}{right}')
     
 print(ans) #53855

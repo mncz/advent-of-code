@@ -1,3 +1,5 @@
+# Day 1: Trebuchet?! - Part One
+
 file = open('input.txt', 'r')
 lines = file.readlines()
 ans = 0
@@ -17,4 +19,4 @@ for l in lines:
     
     ans += int(f'{left}{right}')
 
-print(ans) #53855
+print(ans) #54634
