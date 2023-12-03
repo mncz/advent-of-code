@@ -1,6 +1,6 @@
 # Day 1: Trebuchet?! - Part Two
 
-def replace_text(line):
+def replace_text(line: str) -> str:
     n = [
         ('one', 'o1e'),
         ('two', 't2o'),

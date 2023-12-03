@@ -1,25 +1,22 @@
-# Day 3: Gear Ratios - Part Two
+# Day 3: Gear Ratios - Part One
 
-import math
-
-def is_part(mat, i, j):
+def is_part(mat: list[list[str]], i: int, j: int) -> bool:
+    m, n = len(mat), len(mat[0])
     coo = [
         (-1, -1), (-1, 0), (-1, 1), (0, -1), 
         (0, 1), (1, -1), (1, 0), (1, 1)
     ]
-    m, n = len(mat), len(mat[0])
     
     for x, y in coo:
         if x + i >= 0 and x + i < m and y + j >= 0 and y + j < n:
-            if mat[x+i][y+j] == '*':
-                return (True, f'{x+i}-{y+j}')
+            if not mat[x+i][y+j].isnumeric() and mat[x+i][y+j] != '.':
+                return True
     
-    return (False, '')
+    return False
 
 file = open('input.txt', 'r')
 lines = file.readlines()
 mat = []
-gear = {}
 ans = 0
 n, part = '', False
 
@@ -30,20 +27,11 @@ for i in range(len(mat)):
     for j in range(len(mat[i])):
         if mat[i][j].isnumeric():
             n = n + mat[i][j]
-
-            if not part:
-                (part, star) = is_part(mat, i, j)
-                
-                if star != '' and star not in gear:
-                    gear[star] = []
+            part = is_part(mat, i, j) if not part else part
         else:
             if len(n) and part:
-                gear[star].append(int(n))
+                ans += int(n)
 
             n, part = '', False
 
-for k in gear:
-    if len(gear[k]) == 2:
-        ans += math.prod(gear[k])
-
-print(ans) #84051670
+print(ans) #532428
