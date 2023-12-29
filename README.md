@@ -2,7 +2,7 @@
 
 ![Advent of Code](https://img.shields.io/badge/Advent%20of%20Code-2015%20to%202023-brightgreen) 
 ![](https://img.shields.io/badge/stars%20⭐-63-yellow)
-![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Python](https://img.shields.io/badge/Python-3.12-blue)
 [![State-of-the-art Shitcode](https://img.shields.io/static/v1?label=State-of-the-art&message=Shitcode&color=7B5804)](https://github.com/trekhleb/state-of-the-art-shitcode)
 
 This repository proudly presents my Python solutions to the puzzles from the Advent of Code event for various years, including the current. Advent of Code is an annual coding challenge where participants solve two programming puzzles each day from December 1st to December 25th. Brace yourself for a journey through a collection of code snippets that may not break any speed records but certainly solve the puzzles – eventually.
