@@ -1,7 +1,7 @@
 # 🎄☃️ Advent of Code in Python
 
 ![Advent of Code](https://img.shields.io/badge/Advent%20of%20Code-2015%20to%202024-brightgreen) 
-![](https://img.shields.io/badge/stars%20⭐-71-yellow)
+![](https://img.shields.io/badge/stars%20⭐-73-yellow)
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 [![State-of-the-art Shitcode](https://img.shields.io/static/v1?label=State-of-the-art&message=Shitcode&color=7B5804)](https://github.com/trekhleb/state-of-the-art-shitcode)
 
